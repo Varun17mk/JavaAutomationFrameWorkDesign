@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="All Test Suite">
+    <test name="SubmitOrderTest">
+        <classes>
+            <class name="RSacademy.SubmitOrderTest">
+            </class>
+        </classes>
+    </test>
+    <test name="ErrorValidationTest">
+        <classes>
+            <class name="RSacademy.ErrorValidation"/>
+        </classes>
+
+    </test>
+</suite>
