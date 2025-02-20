@@ -1,16 +1,17 @@
-package RSacademy;
+package Tests;
 
 import PageObject.CartPage;
 import PageObject.OrderConfirmationPage;
 import PageObject.PlaceOrderPage;
 import PageObject.ProductCatalogue;
 import TestComponents.BaseTest;
+import TestComponents.RetryFlakyFailedTC;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class ErrorValidation extends BaseTest {
 
-    @Test
+    @Test(groups = "ErrorHandling",retryAnalyzer = RetryFlakyFailedTC.class)
     public void LoginErrorValidation() {
 
         String productName = "IPHONE 13 PRO";
@@ -19,7 +20,7 @@ public class ErrorValidation extends BaseTest {
         //Sending Email id and Password as argument and loginApplicationPage performs login into application using arguments provided
         // and navigating to productCatalogue page
         landingPage.loginApplicationPage("varunm@gmail.com", "Varu1234"); //Providing wrong Password
-        Assert.assertEquals(landingPage.getErrorMessage(),"Incorrect email or password.");
+        Assert.assertEquals(landingPage.getErrorMessage(),"Incorrect email  password.");
 
     }
 

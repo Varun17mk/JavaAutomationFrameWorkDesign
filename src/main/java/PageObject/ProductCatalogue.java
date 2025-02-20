@@ -39,6 +39,9 @@ public class ProductCatalogue extends AbstractComponentsPage {
     //Actions on elements
     public List<WebElement> getProductsList() {
         WaitForElementToAppear(productsBy);
+        for (WebElement product : Products) {
+            System.out.println("Product found: " + product.findElement(By.cssSelector("b")).getText());
+        }
         return Products;
     }
 
